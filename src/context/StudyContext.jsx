@@ -104,22 +104,28 @@ export function StudyProvider({ children }) {
   const [topics, setTopics] = useState(SEED_TOPICS);
   const [tasks, setTasks] = useState(SEED_TASKS);
   const [revisionSchedule, setRevisionSchedule] = useState([]);
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     const raw = localStorage.getItem(STORAGE_KEY);
     const parsed = raw ? safeParseJSON(raw) : null;
-    if (!parsed) return;
+    if (!parsed) {
+      setHydrated(true);
+      return;
+    }
 
     setSubjects(Array.isArray(parsed.subjects) ? parsed.subjects : SEED_SUBJECTS);
     setTopics(Array.isArray(parsed.topics) ? parsed.topics : SEED_TOPICS);
     setTasks(Array.isArray(parsed.tasks) ? parsed.tasks : SEED_TASKS);
     setRevisionSchedule(Array.isArray(parsed.revisionSchedule) ? parsed.revisionSchedule : []);
+    setHydrated(true);
   }, []);
 
   useEffect(() => {
+    if (!hydrated) return;
     const next = { subjects, topics, tasks, revisionSchedule };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-  }, [subjects, topics, tasks, revisionSchedule]);
+  }, [hydrated, subjects, topics, tasks, revisionSchedule]);
 
   const addSubject = useCallback((subject) => {
     const next = {
