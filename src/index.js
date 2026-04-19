@@ -7,11 +7,14 @@ import './styles/variables.css';
 import './styles/globals.css';
 
 import App from './App.jsx';
+import { StudyProvider } from './context/StudyContext.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <StudyProvider>
+      <App />
+    </StudyProvider>
     <ToastContainer />
   </React.StrictMode>
 );
