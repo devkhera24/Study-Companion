@@ -225,6 +225,10 @@ export function StudyProvider({ children }) {
     return next;
   }, []);
 
+  const updateRevision = useCallback((id, data) => {
+    setRevisionSchedule((prev) => prev.map((r) => (r.id === id ? { ...r, ...data } : r)));
+  }, []);
+
   const deleteRevision = useCallback((id) => {
     setRevisionSchedule((prev) => prev.filter((r) => r.id !== id));
   }, []);
@@ -246,6 +250,7 @@ export function StudyProvider({ children }) {
       deleteTask,
       toggleTaskStatus,
       addRevision,
+      updateRevision,
       deleteRevision,
       __storageKey: STORAGE_KEY,
       __defaultState: defaultState,
@@ -266,6 +271,7 @@ export function StudyProvider({ children }) {
       deleteTask,
       toggleTaskStatus,
       addRevision,
+      updateRevision,
       deleteRevision,
     ]
   );

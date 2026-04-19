@@ -3,6 +3,7 @@ const STATUS_COLORS = {
   'In Progress': 'amber',
   'Not Started': 'muted',
   'Needs Revision': 'warning',
+  Overdue: 'danger',
 };
 
 const PRIORITY_COLORS = {
