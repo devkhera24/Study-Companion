@@ -47,10 +47,10 @@ export default function Sidebar() {
   return (
     <aside className="sidebar" style={{ width }}>
       <div className="sidebar-top">
-        <div className="sidebar-logo" title="Scholar">
+        <div className="sidebar-logo" title="StudBud">
           {!isCollapsed ? (
             <>
-              <span className="sidebar-logoText">SCHOLAR</span>
+              <span className="sidebar-logoText">StudBud</span>
               <span className="sidebar-logoDot" aria-hidden="true">
                 .
               </span>
