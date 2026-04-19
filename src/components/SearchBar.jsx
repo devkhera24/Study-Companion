@@ -1,4 +1,4 @@
-export default function SearchBar({ query, onQueryChange, placeholder = 'Search…' }) {
+export default function SearchBar({ query, onQueryChange, placeholder = 'Search…', meta }) {
   return (
     <div className="searchbar">
       <input
@@ -8,7 +8,7 @@ export default function SearchBar({ query, onQueryChange, placeholder = 'Search�
         placeholder={placeholder}
         aria-label="Global search"
       />
-      <div className="searchbar-meta">{query ? `${query.length} chars` : ' '}</div>
+      <div className="searchbar-meta">{typeof meta === 'string' ? meta : query ? `${query.length} chars` : ' '}</div>
     </div>
   );
 }
