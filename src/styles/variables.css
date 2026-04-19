@@ -1,0 +1,25 @@
+:root {
+  --bg-primary: #0F0F0F;
+  --bg-secondary: #1A1A1A;
+  --bg-card: #222222;
+  --bg-hover: #2A2A2A;
+  --accent-gold: #F5A623;
+  --accent-gold-dim: rgba(245, 166, 35, 0.15);
+  --accent-sage: #6B8F71;
+  --text-primary: #F2EFE8;
+  --text-secondary: #A09E98;
+  --text-muted: #5A5856;
+  --border: #2E2E2E;
+  --border-accent: rgba(245, 166, 35, 0.3);
+  --danger: #E05C5C;
+  --success: #6B8F71;
+  --warning: #D4A017;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-body: 'Lato', sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
