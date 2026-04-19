@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
+import Layout from './components/layout/Layout.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Subjects from './pages/Subjects.jsx';
 import Tasks from './pages/Tasks.jsx';
@@ -11,11 +12,13 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/subjects" element={<Subjects />} />
-        <Route path="/tasks" element={<Tasks />} />
-        <Route path="/revision" element={<Revision />} />
-        <Route path="/ai-tools" element={<AITools />} />
+        <Route element={<Layout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/subjects" element={<Subjects />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/revision" element={<Revision />} />
+          <Route path="/ai-tools" element={<AITools />} />
+        </Route>
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </BrowserRouter>
